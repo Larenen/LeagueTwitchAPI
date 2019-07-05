@@ -60,3 +60,7 @@ body {
     display: flex;
     margin-bottom: 1rem;
 }
+
+#copyToClipboardBadge {
+    margin-top: 0.2rem;
+}

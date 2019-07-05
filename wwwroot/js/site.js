@@ -8,3 +8,8 @@ $(function () {
         $('#collapseMain').collapse('show');
     })
 })
+
+function copyTextToClipboard() {
+    var copyText = $('#linkToCopy').text();
+    navigator.clipboard.writeText(copyText);
+} 
