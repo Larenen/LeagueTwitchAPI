@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-lg collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <button class="btn btn-block btn-lg text-primary collapsed " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             StreamLabs Chatbot
                         </button>
                     </h2>
@@ -21,13 +21,14 @@
                             All you have to do is add a new command as shown below.
                         </p>
                         <h4 class="h4">
-                            Division & Win Ratio
+                            Divisions & Win Ratio
                         </h4>
                         <div class="jumbotron text-left">
                             <p>Command: !divisions or !winratio (it's just example, feel free to use your own name :)"</p>
                             <p>Response: $readapi(YOUR_LINK_HERE)</p>
                             <p class="text-info">Example: $readapi(http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/divisions/Larenen?server=eune&cultureName=en-US)</p>
                             <p>Usage: !division or !winratio</p>
+                            <p>Example response: Solo Division: GOLD IV(0 LP) <br/> Flex Summoner's Rift Division: BRONZE II(76 LP)</p>
                         </div>
                         <h4 class="h4">
                             Champion mastery
@@ -36,11 +37,12 @@
                             <p>Command: !mastery (it's just example, feel free to use your own name :)"</p>
                             <p>
                                 Response: $readapi(YOUR_LINK_HERE)
-                                <br/>
+                                <br />
                                 However in this case u need to replace text &lt;replace with bot argument&gt; with $arg1, as seen in example.
                             </p>
                             <p class="text-info">Example: $readapi(http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/Mastery/Larenen/$arg1?server=eune&cultureName=en-US)</p>
                             <p>Usage: !mastery Champion_Name</p>
+                            <p>Example response: Champion level 7 with Taliyah (84937 points).</p>
                         </div>
                     </div>
                 </div>
@@ -48,7 +50,7 @@
             <div class="card">
                 <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-lg collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="btn btn-block btn-lg text-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Nightbot
                         </button>
                     </h2>
@@ -59,13 +61,14 @@
                             All you have to do is add a new command as shown below.
                         </p>
                         <h4 class="h4">
-                            Division & Win Ratio
+                            Divisions & Win Ratio
                         </h4>
                         <div class="jumbotron text-left">
                             <p>Command: !divisions or !winratio (it's just example, feel free to use your own name :)"</p>
                             <p>Message: $(urlfetch YOUR_LINK_HERE)</p>
                             <p class="text-info">Example: $(urlfetch http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/divisions/Larenen?server=eune&cultureName=en-US)</p>
                             <p>Usage: !division or !winratio</p>
+                            <p>Example response: Solo Division: GOLD IV(0 LP) <br /> Flex Summoner's Rift Division: BRONZE II(76 LP)</p>
                         </div>
                         <h4 class="h4">
                             Champion mastery
@@ -79,6 +82,7 @@
                             </p>
                             <p class="text-info">Example: $(urlfetch http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/Mastery/Larenen/$(1)?server=eune&cultureName=en-US)</p>
                             <p>Usage: !mastery Champion_Name</p>
+                            <p>Example response: Champion level 7 with Taliyah (84937 points).</p>
                         </div>
                     </div>
                 </div>
@@ -86,7 +90,7 @@
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-lg collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-block btn-lg text-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             StreamElements
                         </button>
                     </h2>
@@ -97,13 +101,14 @@
                             All you have to do is add a new command as shown below.
                         </p>
                         <h4 class="h4">
-                            Division & Win Ratio
+                            Divisions & Win Ratio
                         </h4>
                         <div class="jumbotron text-left">
                             <p>Command: !divisions or !winratio (it's just example, feel free to use your own name :)"</p>
                             <p>Response: ${YOUR_LINK_HERE}</p>
                             <p class="text-info">Example: ${customapi.http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/divisions/Larenen?server=eune&cultureName=en-US}</p>
                             <p>Usage: !division or !winratio</p>
+                            <p>Example response: Solo Division: GOLD IV(0 LP) <br /> Flex Summoner's Rift Division: BRONZE II(76 LP)</p>
                         </div>
                         <h4 class="h4">
                             Champion mastery
@@ -117,6 +122,7 @@
                             </p>
                             <p class="text-info">Example: ${customapi.http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/Mastery/Larenen/${1}?server=eune&cultureName=en-US}</p>
                             <p>Usage: !mastery Champion_Name</p>
+                            <p>Example response: Champion level 7 with Taliyah (84937 points).</p>
                         </div>
                     </div>
                 </div>

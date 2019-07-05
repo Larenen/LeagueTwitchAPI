@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Contact Me!";
+}
+
+@model ContactViewModel
+
+<div class="container-fluid">
+    <div class="text-center">
+        <h1 class="display-4">Contact Me!</h1>
+        <p>If you have any idea what should be added or changed, please contact me as soon as possible via the form below.</p>
+        <form asp-action="Contact" method="post">
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input type="text" asp-for="Name" class="form-control" placeholder="Your name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input type="email" asp-for="Email" class="form-control" placeholder="Your email"/>
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message"></label>
+                <textarea asp-for="Message" class="form-control" placeholder="Write your idea here..."></textarea>
+                <span class="text-danger" asp-validation-for="Message"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Send!</button>
+        </form>
+    </div>
+</div>
+

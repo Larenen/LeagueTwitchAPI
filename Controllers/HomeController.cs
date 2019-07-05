@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LeagueAPI.Models;
@@ -73,13 +74,45 @@ namespace LeagueAPI.Controllers
             });
         }
 
-        [HttpGet]
         public IActionResult Link(LinkViewModel linkViewModel)
         {
             return View(linkViewModel);
         }
 
         public IActionResult HowToSetup()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Contact(ContactViewModel contactViewModel)
+        {
+            var mailbody = $@"Hallo website owner,
+
+                            This is a new contact request from your website:
+
+                            Name: {contactViewModel.Name}
+                            Email: {contactViewModel.Email}
+                            Message: ""{contactViewModel.Message}""
+
+
+                            Cheers,
+                            The website contact form";
+
+            if (!ModelState.IsValid)
+                return View(contactViewModel);
+
+            await EmailHelper.SendMail(contactViewModel,mailbody);
+
+            return RedirectToAction("EmailSend");
+        }
+
+        public IActionResult EmailSend()
         {
             return View();
         }

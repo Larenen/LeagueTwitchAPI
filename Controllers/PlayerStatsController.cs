@@ -91,7 +91,7 @@ namespace LeagueAPI.Controllers
                                                  .Replace('N', '-').Replace('L', 'X');
                             }
 
-                            divisions += Environment.NewLine;
+                            divisions += " " + Environment.NewLine;
                         }
 
                         return divisions;
@@ -216,7 +216,7 @@ namespace LeagueAPI.Controllers
                             else
                                 winRate += string.Format(rm.GetString("FlexTTWinRatio"), winRatio);
 
-                            winRate += Environment.NewLine;
+                            winRate += " " + Environment.NewLine;
                         }
 
                         return winRate;
