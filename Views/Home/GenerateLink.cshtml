@@ -11,94 +11,90 @@
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="accordion" id="accordion">
-                        <div class="card">
-                            <div id="collapseMain" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                <div class="card-header">
-                                    <p class="font-weight-bold">
-                                        Generate your unique link to statistics about your account.
-                                    </p>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Here you can generate your own link, which will allow you to display information such as your current division,
-                                        master points on the selected hero or win ratio. Complete the form, click generate, and enjoy recent
-                                        information about your account on your twitch chat. In case you are not sure how to fill in the form,
-                                        use the question marks next to the appropriate inputs.
-                                    </p>
-                                    <hr />
-                                    <p class="font-weight-light">
-                                        Do you already have a link?
-                                        <br/>
-                                        Find out how to use it by clicking <a asp-action="HowToSetup">here</a>.
-                                    </p>
-                                </div>
+                        <div id="collapseMain" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-header">
+                                <p class="font-weight-bold">
+                                    Generate your unique link to statistics about your account.
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Here you can generate your own link, which will allow you to display information such as your current division,
+                                    master points on the selected hero or win ratio. Complete the form, click generate, and enjoy recent
+                                    information about your account on your twitch chat. In case you are not sure how to fill in the form,
+                                    use the question marks next to the appropriate inputs.
+                                </p>
+                                <hr/>
+                                <p class="font-weight-light">
+                                    Do you already have a link?
+                                    <br/>
+                                    Find out how to use it by clicking <a asp-action="HowToSetup">here</a>.
+                                </p>
                             </div>
                         </div>
-                        <div class="card">
-                            <div id="collapseApi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-header">
-                                    <p class="font-weight-bold">
-                                        Information type.
-                                    </p>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Here, you can choose what information about your account you are interested in.
-                                        Remember that one link supports only one type of information. However, you can generate more than one link.
-                                    </p>
-                                    <hr />
-                                    <p class="font-weight-light">
-                                        If you are interested in other types of statistics or have an idea for such, please contact me <a asp-action="Contact">here</a>.
-                                    </p>
-                                </div>
+
+                        <div id="collapseApi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-header">
+                                <p class="font-weight-bold">
+                                    Information type.
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Here, you can choose what information about your account you are interested in.
+                                    Remember that one link supports only one type of information. However, you can generate more than one link.
+                                </p>
+                                <hr/>
+                                <p class="font-weight-light">
+                                    If you are interested in other types of statistics or have an idea for such, please contact me <a asp-action="Contact">here</a>.
+                                </p>
                             </div>
                         </div>
-                        <div class="card">
-                            <div id="collapseServer" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-header">
-                                    <p class="font-weight-bold">Server.</p>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Here you can choose the server where your account is located.
-                                    </p>
-                                    <hr />
-                                    <p class="font-weight-light">
-                                        If your server is not listed here and u still wish to use my commands on your twitch chat, please contact me <a asp-action="Contact">here</a>.
-                                    </p>
-                                </div>
+
+                        <div id="collapseServer" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-header">
+                                <p class="font-weight-bold">Server.</p>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Here you can choose the server where your account is located.
+                                </p>
+                                <hr/>
+                                <p class="font-weight-light">
+                                    If your server is not listed here and u still wish to use my commands on your twitch chat, please contact me <a asp-action="Contact">here</a>.
+                                </p>
                             </div>
                         </div>
-                        <div class="card">
-                            <div id="collapseRegion" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                                <div class="card-header">
-                                    <p class="font-weight-bold">
-                                        Language.
-                                    </p>
-                                </div>
-                                <div class="card-body">
-                                    <p>
-                                        Here you can choose in what language, statistics will be displayed.
-                                    </p>
-                                    <hr />
-                                    <p class="font-weight-light">
-                                        If your language is not listed here and u still wish to use my commands on your twitch chat, please contact me <a asp-action="Contact">here</a>.
-                                    </p>
-                                </div>
+
+                        <div id="collapseRegion" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="card-header">
+                                <p class="font-weight-bold">
+                                    Language.
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Here you can choose in what language, statistics will be displayed.
+                                </p>
+                                <hr/>
+                                <p class="font-weight-light">
+                                    If your language is not listed here and u still wish to use my commands on your twitch chat, please contact me <a asp-action="Contact">here</a>.
+                                </p>
                             </div>
                         </div>
-                        <div class="card">
-                            <div id="collapseNickname" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                                <div class="card-header">
-                                    <p class="font-weight-bold">
-                                        Nickname.
-                                    </p>
-                                </div>
-                                <div class="card-body">
-                                    Here you need to enter name of your summoner.
-                                </div>
+
+
+                        <div id="collapseNickname" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                            <div class="card-header">
+                                <p class="font-weight-bold">
+                                    Nickname.
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                Here you need to enter name of your summoner.
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-12 col-md-8">

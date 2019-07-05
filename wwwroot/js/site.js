@@ -3,12 +3,10 @@
 
 // Write your JavaScript code.
 
-$(function () {
-    $('.collapse').on('hidden.bs.collapse', function () {
-        console.log("chuj");
+$('.collapse').on('hidden.bs.collapse',
+    function() {
         $('#collapseMain').collapse('show');
-    })
-})
+    });
 
 function copyTextToClipboard() {
     var copyText = $('#linkToCopy').text();
