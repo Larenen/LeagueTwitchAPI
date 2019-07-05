@@ -5,6 +5,7 @@
 
 $(function () {
     $('.collapse').on('hidden.bs.collapse', function () {
+        console.log("chuj");
         $('#collapseMain').collapse('show');
     })
 })

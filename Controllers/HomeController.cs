@@ -41,14 +41,18 @@ namespace LeagueAPI.Controllers
 
             if (playerId == null)
             {
-                ModelState.AddModelError("PlayerNotFound","Player not found try again with different name, or change your server");
-                return View();
-            }
+                if (generateLinkViewModel.Server == "na")
+                {
+                    playerId = await PlayerApiHelper.FetchPlayerId(generateLinkViewModel.Nickname, "na1",apiKey);
+                    if (playerId == null)
+                    {
+                        ModelState.AddModelError("PlayerNotFound","Player not found try again with different name, or change your server");
+                        return View();
+                    }
 
-            if (generateLinkViewModel.Region == "na")
-            {
-                playerId = await PlayerApiHelper.FetchPlayerId(generateLinkViewModel.Nickname, "na1",apiKey);
-                if (playerId == null)
+                    generateLinkViewModel.Server = "na1";
+                }
+                else
                 {
                     ModelState.AddModelError("PlayerNotFound","Player not found try again with different name, or change your server");
                     return View();
