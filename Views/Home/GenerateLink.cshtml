@@ -5,19 +5,19 @@
 }
 <div class="container-fluid">
     <div class="text-center">
-        <h1 class="display-4">Generate Command Link</h1>
+        <h1 class="display-4 text-color-red">Generate Command Link</h1>
         <hr/>
         <form asp-action="GenerateLink" method="post">
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="accordion" id="accordion">
                         <div id="collapseMain" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-header">
-                                <p class="font-weight-bold">
-                                    Generate your unique link to statistics about your account.
+                            <div class="card-header color-bg">
+                                <p class="font-weight-bold ">
+                                    Generate your unique link to statistics about your account
                                 </p>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body color-bg rounded-bottom">
                                 <p>
                                     Here you can generate your own link, which will allow you to display information such as your current division,
                                     master points on the selected hero or win ratio. Complete the form, click generate, and enjoy recent
@@ -34,12 +34,12 @@
                         </div>
 
                         <div id="collapseApi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="card-header">
+                            <div class="card-header color-bg">
                                 <p class="font-weight-bold">
-                                    Information type.
+                                    Information type
                                 </p>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body color-bg rounded-bottom">
                                 <p>
                                     Here, you can choose what information about your account you are interested in.
                                     Remember that one link supports only one type of information. However, you can generate more than one link.
@@ -52,10 +52,10 @@
                         </div>
 
                         <div id="collapseServer" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                            <div class="card-header">
-                                <p class="font-weight-bold">Server.</p>
+                            <div class="card-header color-bg">
+                                <p class="font-weight-bold">Server</p>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body color-bg rounded-bottom">
                                 <p>
                                     Here you can choose the server where your account is located.
                                 </p>
@@ -67,12 +67,12 @@
                         </div>
 
                         <div id="collapseRegion" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                            <div class="card-header">
+                            <div class="card-header color-bg">
                                 <p class="font-weight-bold">
-                                    Language.
+                                    Language
                                 </p>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body color-bg rounded-bottom">
                                 <p>
                                     Here you can choose in what language, statistics will be displayed.
                                 </p>
@@ -82,15 +82,13 @@
                                 </p>
                             </div>
                         </div>
-
-
                         <div id="collapseNickname" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                            <div class="card-header">
+                            <div class="card-header color-bg">
                                 <p class="font-weight-bold">
-                                    Nickname.
+                                    Nickname
                                 </p>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body color-bg rounded-bottom">
                                 Here you need to enter name of your summoner.
                             </div>
                         </div>
@@ -100,73 +98,72 @@
                 <div class="col-12 col-md-8">
                     <div class="row">
                         <div class="col-10 col-md-11">
-                            <div class="form-group">
-                                <label asp-for="Api">Information Type</label>
-                                <select class="form-control" asp-for="Api">
+                            <label class="text-color-red" asp-for="Api">Information Type</label>
+                            <div class="select">
+                                <select class="" asp-for="Api">
                                     <option value="divisions">Divisions</option>
                                     <option value="mastery">Mastery</option>
                                     <option value="winRate">Win Ratio</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-2 col-md-1 info-fix">
-                            <a tabindex="0" class="btn btn-info" role="button" data-toggle="collapse" data-target="#collapseApi" aria-expanded="true" aria-controls="collapseApi">
+                        <div class="col-2 col-md-1 info-fix pl-0">
+                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseApi" aria-expanded="true" aria-controls="collapseApi">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>
                         <div class="col-10 col-md-11">
-                            <div class="form-group">
-                                <label asp-for="Server">Server</label>
-                                <select class="form-control" asp-for="Server">
+                            <label class="text-color-red" asp-for="Server">Server</label>
+                            <div class="select">
+                                <select class="" asp-for="Server">
                                     <option value="euw">Europe West</option>
                                     <option value="eune">Europe Nordic & East</option>
                                     <option value="na">North America</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-2 col-md-1 info-fix">
-                            <a tabindex="0" class="btn btn-info" role="button" data-toggle="collapse" data-target="#collapseServer" aria-expanded="true" aria-controls="collapseServer">
+                        <div class="col-2 col-md-1 info-fix pl-0">
+                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseServer" aria-expanded="true" aria-controls="collapseServer">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>
                         <div class="col-10 col-md-11">
-                            <div class="form-group">
-                                <label asp-for="Region">Language</label>
-                                <select class="form-control" asp-for="Region">
+                            <label class="text-color-red" asp-for="Region">Language</label>
+                            <div class="select">
+                                <select class="" asp-for="Region">
                                     <option value="en-US">English</option>
                                     <option value="pl-PL">Polish</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-2 col-md-1 info-fix">
-                            <a tabindex="0" class="btn btn-info" role="button" data-toggle="collapse" data-target="#collapseRegion" aria-expanded="true" aria-controls="collapseRegion">
+                        <div class="col-2 col-md-1 info-fix pl-0">
+                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseRegion" aria-expanded="true" aria-controls="collapseRegion">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>
                         <div class="col-10 col-md-11">
-                            <div class="form-group">
-                                <label asp-for="Nickname">League nickname</label>
-                                <input asp-for="Nickname" type="text" class="form-control" aria-describedby="nickName" placeholder="Enter your League nickname" pattern="\X{1,}+">
-                                @{
-                                    if (!ViewData.ModelState.IsValid)
-                                    {
-                                        ViewData.ModelState.TryGetValue("PlayerNotFound", out var modelStateEntry);
-                                        <div class="alert alert-danger" role="alert">@modelStateEntry.Errors[0].ErrorMessage</div>
-                                        ;
-                                        ViewData.ModelState.Clear();
-                                    }
-                                }
+                            <label class="text-color-red" asp-for="Nickname">League nickname</label>
+                            <div class="input">
+                                <input asp-for="Nickname" type="text" aria-describedby="nickName" placeholder="Enter your League nickname" pattern="\X{1,}+">
                             </div>
                         </div>
-                        <div class="col-2 col-md-1 info-fix">
-                            <a tabindex="0" class="btn btn-info" role="button" data-toggle="collapse" data-target="#collapseNickname" aria-expanded="true" aria-controls="collapseNickname">
+                        <div class="col-2 col-md-1 info-fix pl-0">
+                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseNickname" aria-expanded="true" aria-controls="collapseNickname">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>
+                        @{
+                                if (!ViewData.ModelState.IsValid)
+                                {
+                                    ViewData.ModelState.TryGetValue("PlayerNotFound", out var modelStateEntry);
+                                    <div class="alert alert-danger col-12 mt-2" role="alert">@modelStateEntry.Errors[0].ErrorMessage</div>;
+                                    ViewData.ModelState.Clear();
+                                }
+                            }
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Generate!</button>
+            <button type="submit" class="btn btn-red mt-2">Generate!</button>
         </form>
     </div>
 </div>

@@ -43,6 +43,16 @@
     height: 64px;
 }
 
+.info-fix {
+    align-items: flex-end;
+    display: flex;
+    margin-bottom: 0.1rem;
+}
+
+.info-fix a{
+    height: 60%;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -128,6 +138,95 @@ a:hover {
 }
 /************************************************/
 
+
+/** Custom Select **/
+
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #ED6062;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 59%;
+    line-height: 3;
+    background: #ED6062;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #252525;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #D03B3E;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+/*************************************/
+
+/**Custom Text Input */
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #ED6062;
+    background-image: none;
+  }
+
+.input {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 59%;
+    line-height: 3;
+    background-color: #ED6062;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  input {
+    flex: 1;
+    padding: 0 .5em;
+    background-color: #ED6062;
+    color: #252525;
+    cursor: pointer;
+  }
+  /*************************/
+
 .navbar-dark .navbar-nav .nav-link {
     color: #252525;
 }
@@ -136,14 +235,15 @@ a:hover {
     color: #252525;
 }
 
+/** Custom buttons */
 .btn-red {
     background-color: #ED6062;
-    border-color: #dc3545;
+    border-color: #ED6062;
   }
   
   .btn-red:hover {
     background-color: #E64345;
-    border-color: #bd2130;
+    border-color: #E64345;
   }
   
   .btn-red:focus, .btn-red.focus {
@@ -165,3 +265,36 @@ a:hover {
   .show > .btn-red.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
   }
+
+
+  .btn-red-info {
+    background-color: #FD8B8E;
+    border-color: #FD8B8E;
+  }
+  
+  .btn-red-info:hover {
+    background-color: #ED6064;
+    border-color: #ED6064;
+  }
+  
+  .btn-red-info:focus, .btn-red-info.focus {
+    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+  }
+  
+  .btn-red-info.disabled, .btn-red-info:disabled {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-red-info:not(:disabled):not(.disabled):active, .btn-red-info:not(:disabled):not(.disabled).active,
+  .show > .btn-red-info.dropdown-toggle {
+    background-color: #bd2130;
+    border-color: #b21f2d;
+  }
+  
+  .btn-red-info:not(:disabled):not(.disabled):active:focus, .btn-red-info:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-red-info.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+  }
+
+  /*****************************/
