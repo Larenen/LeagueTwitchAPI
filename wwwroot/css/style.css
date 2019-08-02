@@ -73,10 +73,11 @@ html {
     position: absolute;
     bottom: 0;
     width: 100%;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     /* Set the fixed height of the footer here */
-    height: 60px;
+    min-height: 60px;
   }
+
 
 
 body {
