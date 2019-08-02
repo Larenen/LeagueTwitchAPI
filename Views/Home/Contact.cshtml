@@ -7,25 +7,25 @@
 
 <div class="container-fluid">
     <div class="text-center">
-        <h1 class="display-4">Contact Me!</h1>
-        <p>If you have any idea what should be added or changed, please contact me as soon as possible via the form below.</p>
+        <h1 class="display-4 text-color-red">Contact Me!</h1>
+        <p class="text-color-red">If you have any idea what should be added or changed, please contact me as soon as possible via the form below.</p>
         <form asp-action="Contact" method="post">
-            <div class="form-group">
-                <label asp-for="Name">Name</label>
-                <input type="text" asp-for="Name" class="form-control" placeholder="Your name">
-                <span class="text-danger" asp-validation-for="Name"></span>
+            <label class="text-color-red mt-2" asp-for="Name">Name</label>
+            <div class="input">
+                <input type="text" asp-for="Name" class="" placeholder="Your name">
             </div>
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input type="email" asp-for="Email" class="form-control" placeholder="Your email"/>
-                <span class="text-danger" asp-validation-for="Email"></span>
+            <span class="text-danger d-block" asp-validation-for="Name"></span>
+            <label class="text-color-red mt-2" asp-for="Email"></label>
+            <div class="input">
+                <input type="email" asp-for="Email" class="" placeholder="Your email"/>
             </div>
-            <div class="form-group">
-                <label asp-for="Message"></label>
-                <textarea asp-for="Message" class="form-control" placeholder="Write your idea here..."></textarea>
-                <span class="text-danger" asp-validation-for="Message"></span>
+            <span class="text-danger d-block" asp-validation-for="Email"></span>
+            <label class="text-color-red mt-2" asp-for="Message"></label>
+            <div class="input">
+                <textarea asp-for="Message" class="" placeholder="Write your idea here..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send!</button>
+            <span class="text-danger d-block" asp-validation-for="Message"></span>
+            <button type="submit" class="btn btn-red mt-2">Send!</button>
         </form>
     </div>
 </div>

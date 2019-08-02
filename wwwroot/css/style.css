@@ -200,7 +200,7 @@ select {
 
 /**Custom Text Input */
 
-input {
+input , textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -222,7 +222,7 @@ input {
     overflow: hidden;
     border-radius: .25em;
   }
-  input {
+  input , textarea {
     flex: 1;
     padding: 0 .5em;
     background-color: #ED6062;
@@ -302,3 +302,16 @@ input {
   }
 
   /*****************************/
+
+  .alert-info-red {
+      background-color: #FFD9DA;
+      border: 0;
+  }
+
+ .link-dark {
+     color: #252525;
+ }
+
+ .link-dark:hover{
+     color: #000000;
+ }

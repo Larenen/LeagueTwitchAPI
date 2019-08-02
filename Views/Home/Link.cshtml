@@ -5,26 +5,26 @@
 @model LinkViewModel
 <div class="container-fluid">
     <div class="text-center">
-        <div class="card">
+        <div class="card color-bg">
             <div class="card-body">
-                <h1 class="display-4">Here is your link!</h1>
-                <div class="alert alert-info" role="alert">
+                <h1 class="display-4 text-color-dark">Here is your link!</h1>
+                <div class="alert alert-info alert-info-red" role="alert">
                     <a href="@Model.Link" target="_blank" id="linkToCopy" class="text-success">@Model.Link</a>
                     <a href="#" onclick="copyTextToClipboard()" class="badge badge-success float-right" id="copyToClipboardBadge">Copy your link to clipboard!</a>
                 </div>
             </div>
         </div>
         <br/>
-        <div class="card">
+        <div class="card color-bg">
             <div class="card-body">
-                <h1 class="display-4">What now?</h1>
-                <p>
+                <h1 class="display-4 text-color-dark">What now?</h1>
+                <p text-color-dark>
                     Now that you have your link, you can try it by pasting into the address bar of the browser or by clicking the link above.
                     If everything is okay, you are now ready to add a new command to your chatbot.
                 </p>
                 <hr/>
-                <p class="font-weight-bold">
-                    Don't you know how? Click <a asp-action="HowToSetup">here</a>
+                <p class=" text-color-dark cl-effect-1">
+                    Don't you know how?<a class="link-dark" asp-action="HowToSetup">Click here</a>
                 </p>
             </div>
         </div>
