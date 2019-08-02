@@ -27,25 +27,25 @@ namespace LeagueAPI.Controllers
     {
         private readonly IMemoryCache _memoryCache;
         private readonly IConfiguration _config;
+        private readonly string _apiKey;
 
         public PlayerStatsController(IMemoryCache memoryCache,IConfiguration config)
         {
             _memoryCache = memoryCache;
             _config = config;
+            _apiKey = System.Environment.GetEnvironmentVariable("RIOT_APIKEY");
         }
 
         [HttpGet("[action]/{playerName}")]
         public async Task<ActionResult<string>> Divisions(string playerName, string server, string cultureName)
         {
-            var apiKey = _config.GetValue("ApiKey", "null");
-             
             ResourceManager rm =
                 new ResourceManager("LeagueAPI.Resources.Resource", typeof(PlayerStatsController).Assembly);
             CultureInfo culture = CultureInfo.CreateSpecificCulture(cultureName);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-            var playerId = await PlayerApiHelper.FetchPlayerId(playerName, server,apiKey);
+            var playerId = await PlayerApiHelper.FetchPlayerId(playerName, server,_apiKey);
             if (playerId == null)
                 return NotFound(rm.GetString("PlayerNotFound"));
 
@@ -58,7 +58,7 @@ namespace LeagueAPI.Controllers
                         return NotFound(rm.GetString("RegionNotFound"));
 
                     riotApiUrlPlayerInfo += "/lol/league/v4/entries/by-summoner/" + playerId +
-                                            "?api_key=" + apiKey;
+                                            "?api_key=" + _apiKey;
 
                     using (HttpResponseMessage response = await client.GetAsync(riotApiUrlPlayerInfo))
                     {
@@ -79,6 +79,9 @@ namespace LeagueAPI.Controllers
                                     leagueEntryDto.Rank, leagueEntryDto.LeaguePoints);
                             else if (leagueEntryDto.QueueType == "RANKED_FLEX_SR")
                                 divisions += string.Format(rm.GetString("FlexSRDivision"), leagueEntryDto.Tier,
+                                    leagueEntryDto.Rank, leagueEntryDto.LeaguePoints);
+                            else if(leagueEntryDto.QueueType == "RANKED_TFT")
+                                divisions += string.Format(rm.GetString("RankedTFTDivision"), leagueEntryDto.Tier,
                                     leagueEntryDto.Rank, leagueEntryDto.LeaguePoints);
                             else
                                 divisions += string.Format(rm.GetString("FlexTTDivision"), leagueEntryDto.Tier,
@@ -110,15 +113,13 @@ namespace LeagueAPI.Controllers
         public async Task<ActionResult<string>> Mastery(string playerName, string championName, string server,
             string cultureName)
         {
-            var apiKey = _config.GetValue("ApiKey", "null");
-
             ResourceManager rm =
                 new ResourceManager("LeagueAPI.Resources.Resource", typeof(PlayerStatsController).Assembly);
             CultureInfo culture = CultureInfo.CreateSpecificCulture(cultureName);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-            var playerId = await PlayerApiHelper.FetchPlayerId(playerName, server,apiKey);
+            var playerId = await PlayerApiHelper.FetchPlayerId(playerName, server,_apiKey);
             if (playerId == null)
                 return NotFound(rm.GetString("PlayerNotFound"));
 
@@ -138,7 +139,7 @@ namespace LeagueAPI.Controllers
 
             riotApiChampionMastery += "/lol/champion-mastery/v4/champion-masteries/by-summoner/" + playerId +
                                       "/by-champion/" + champion.Id +
-                                      "?api_key=" + apiKey;
+                                      "?api_key=" + _apiKey;
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -170,15 +171,13 @@ namespace LeagueAPI.Controllers
         [HttpGet("[action]/{playerName}")]
         public async Task<ActionResult<string>> WinRate(string playerName, string server, string cultureName)
         {
-            var apiKey = _config.GetValue("ApiKey", "null");
-
             ResourceManager rm =
                 new ResourceManager("LeagueAPI.Resources.Resource", typeof(PlayerStatsController).Assembly);
             CultureInfo culture = CultureInfo.CreateSpecificCulture(cultureName);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
 
-            var playerId = await PlayerApiHelper.FetchPlayerId(playerName, server,apiKey);
+            var playerId = await PlayerApiHelper.FetchPlayerId(playerName, server,_apiKey);
             if (playerId == null)
                 return NotFound("Player not found");
 
@@ -191,7 +190,7 @@ namespace LeagueAPI.Controllers
                         return NotFound(rm.GetString("RegionNotFound"));
 
                     riotApiUrlPlayerInfo += "/lol/league/v4/entries/by-summoner/" + playerId +
-                                            "?api_key=" + apiKey;
+                                            "?api_key=" + _apiKey;
 
                     using (HttpResponseMessage response = await client.GetAsync(riotApiUrlPlayerInfo))
                     {
@@ -213,6 +212,8 @@ namespace LeagueAPI.Controllers
                                 winRate += string.Format(rm.GetString("SoloWinRatio"), winRatio);
                             else if (leagueEntryDto.QueueType == "RANKED_FLEX_SR")
                                 winRate += string.Format(rm.GetString("FlexSRWinRatio"), winRatio);
+                            else if(leagueEntryDto.QueueType == "RANKED_TFT")
+                                winRate += string.Format(rm.GetString("RankedTFTWinRatio"), winRatio);
                             else
                                 winRate += string.Format(rm.GetString("FlexTTWinRatio"), winRatio);
 

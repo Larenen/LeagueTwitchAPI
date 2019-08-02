@@ -150,6 +150,12 @@
   <data name="PlayerNotFound" xml:space="preserve">
     <value>Nie znaleziono gracza!</value>
   </data>
+  <data name="RankedTFTDivision" xml:space="preserve">
+    <value>Dywizja Ranked TFT: {0} {1}({2} LP)</value>
+  </data>
+  <data name="RankedTFTWinRatio" xml:space="preserve">
+    <value>Procent Wygranych Ranked TFT: {0}%.</value>
+  </data>
   <data name="RegionNotFound" xml:space="preserve">
     <value>Nie znaleziono takiego regionu!</value>
   </data>

@@ -3,9 +3,56 @@
 }
 
 <div class="text-center">
-    <h1 class="display-2">Welcome to League TwitchAPI!</h1>
-    <h2 class="display-3">
-        Site that provides a commands to Twitch bots, allowing your viewers to see updated data about your account in real time!
-    </h2>
-    <a asp-action="GenerateLink" class="display-4"><b>Let's get started!</b></a>
+    <div class="row mt-2">
+        <div class="col-12">
+            <img class="logo-main" src="~/logo-red.png" alt="logo">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <h1 class="font-big text-color-red">Welcome to LeagueTwitchAPI!</h1>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+                <p class="font-normal text-color-red">
+                    Site that provides a commands to Twitch bots, allowing your viewers to see up to date info about your summoner (like win rate, current division or mastery) in real time!
+                </p>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12 col-md-4 d-flex align-items-stretch mb-2">
+            <div class="card color-bg">
+            <img src="~/tachometer.png" class="card-img-top icon mx-auto m-4" alt="tachometer">
+                <div class="card-body">
+                    <h5 class="card-title font-big">Fast</h5>
+                    <p class="card-text font-normal">Fast response time, that allows your viewers to see informations instantly.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 d-flex align-items-stretch mb-2">
+            <div class="card color-bg">
+            <img src="~/web-settings.png" class="card-img-top icon mx-auto m-4" alt="web-settings">
+                <div class="card-body">
+                    <h5 class="card-title font-big">Easy to setup</h5>
+                    <p class="card-text font-normal">Just step through the link generator, get the link, and set it up in your favorite bot by fallowing our instruction</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 d-flex align-items-stretch mb-2">
+            <div class="card color-bg">
+            <img src="~/robot.png" class="card-img-top icon mx-auto mt-4" alt="robot">
+                <div class="card-body">
+                    <h5 class="card-title font-big">Multiple Bots Support</h5>
+                    <p class="card-text font-normal">Commands work on all popular bots. So take a look how to set them up on your favorite one.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <p class="font-normal text-color-red">Ready?</p>
+            <a asp-action="GenerateLink" class="font-normal btn btn-red text-color-dark color-bg">Let's get started!</a>
+        </div>
+    </div>
 </div>

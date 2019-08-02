@@ -32,9 +32,9 @@ namespace LeagueAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> GenerateLink(GenerateLinkViewModel generateLinkViewModel)
         {
-            var apiKey = _configuration.GetValue("ApiKey", "null");
+            var apiKey = System.Environment.GetEnvironmentVariable("RIOT_APIKEY");
 
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return View();
 
             var playerId = await PlayerApiHelper.FetchPlayerId(generateLinkViewModel.Nickname, generateLinkViewModel.Server,apiKey);
