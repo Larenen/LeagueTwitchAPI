@@ -19,6 +19,7 @@
             <div class="input">
                 <input type="email" asp-for="Email" class="" placeholder="Your email"/>
             </div>
+            <span class="text-info">Feel free to leave empty if you don't need response.</span>
             <span class="text-danger d-block" asp-validation-for="Email"></span>
             <label class="text-color-red mt-2" asp-for="Message"></label>
             <div class="input">
@@ -27,6 +28,7 @@
             <span class="text-danger d-block" asp-validation-for="Message"></span>
             <button type="submit" class="btn btn-red mt-2 mb-3">Send!</button>
         </form>
+        <span class="text-info">I do not collect any data, e-mail address is used by me only in the case when a person expects answer to a question they have asked.</span>
     </div>
 </div>
 
