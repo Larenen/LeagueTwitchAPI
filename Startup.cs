@@ -1,4 +1,5 @@
-﻿using LeagueAPI.Services;
+﻿using AspNetCoreRateLimit;
+using LeagueAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -20,12 +21,19 @@ namespace LeagueAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+            services.Configure<IpRateLimitPolicies>(Configuration.GetSection("IpRateLimitPolicies"));
+            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddMemoryCache();
 
             services.AddScoped<IRiotApiService, RiotApiService>();
             services.AddScoped<ISendgridService, SendgridService>();
@@ -68,6 +76,7 @@ namespace LeagueAPI
             });
             app.UseCookiePolicy();
 
+            app.UseIpRateLimiting();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
