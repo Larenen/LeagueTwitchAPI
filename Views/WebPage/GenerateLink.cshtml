@@ -5,7 +5,7 @@
 }
 <div class="container-fluid">
     <div class="text-center">
-        <h1 class="display-4 text-color-red">Generate Command Link</h1>
+        <h1 class="display-4 text-light">Generate Command Link</h1>
         <hr/>
         <form asp-action="GenerateLink" method="post">
             <div class="row">
@@ -81,7 +81,7 @@
                 <div class="col-12 col-md-8">
                     <div class="row">
                         <div class="col-10 col-md-11">
-                            <label class="text-color-red" asp-for="Api">Information Type</label>
+                            <label class="text-light" asp-for="Api">Information Type</label>
                             <div class="select">
                                 <select class="" asp-for="Api">
                                     <option value="divisions">Divisions</option>
@@ -91,12 +91,12 @@
                             </div>
                         </div>
                         <div class="col-2 col-md-1 info-fix pl-0">
-                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseApi" aria-expanded="true" aria-controls="collapseApi">
+                            <a tabindex="0" class="btn btn-light d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseApi" aria-expanded="true" aria-controls="collapseApi">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>
                         <div class="col-10 col-md-11">
-                            <label class="text-color-red" asp-for="Server">Server</label>
+                            <label class="text-light" asp-for="Server">Server</label>
                             <div class="select">
                                 <select class="" asp-for="Server">
                                     <option value="euw">Europe West</option>
@@ -106,18 +106,18 @@
                             </div>
                         </div>
                         <div class="col-2 col-md-1 info-fix pl-0">
-                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseServer" aria-expanded="true" aria-controls="collapseServer">
+                            <a tabindex="0" class="btn btn-light d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseServer" aria-expanded="true" aria-controls="collapseServer">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>
                         <div class="col-10 col-md-11">
-                            <label class="text-color-red" asp-for="Nickname">League nickname</label>
+                            <label class="text-light" asp-for="Nickname">League nickname</label>
                             <div class="input">
                                 <input asp-for="Nickname" type="text" aria-describedby="nickName" placeholder="Enter your League nickname" pattern="\X{1,}+">
                             </div>
                         </div>
                         <div class="col-2 col-md-1 info-fix pl-0">
-                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseNickname" aria-expanded="true" aria-controls="collapseNickname">
+                            <a tabindex="0" class="btn btn-light d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseNickname" aria-expanded="true" aria-controls="collapseNickname">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-red mt-2 mb-3">Generate!</button>
+            <button type="submit" class="btn btn-light mt-2 mb-3">Generate!</button>
         </form>
     </div>
 </div>

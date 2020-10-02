@@ -7,28 +7,28 @@
 
 <div class="container-fluid">
     <div class="text-center">
-        <h1 class="display-4 text-color-red">Contact Me!</h1>
-        <p class="text-color-red">If you have any idea what should be added or changed, please contact me as soon as possible via the form below.</p>
+        <h1 class="display-4 text-light">Contact Me!</h1>
+        <p class="text-light">If you have any idea what should be added or changed, please contact me as soon as possible via the form below.</p>
         <form asp-action="Contact" method="post">
-            <label class="text-color-red mt-2" asp-for="Name">Name</label>
+            <label class="text-light mt-2" asp-for="Name">Name</label>
             <div class="input">
                 <input type="text" asp-for="Name" class="" placeholder="Your name">
             </div>
             <span class="text-danger d-block" asp-validation-for="Name"></span>
-            <label class="text-color-red mt-2" asp-for="Email"></label>
+            <label class="text-light mt-2" asp-for="Email"></label>
             <div class="input">
                 <input type="email" asp-for="Email" class="" placeholder="Your email"/>
             </div>
-            <span class="text-info">Feel free to leave empty if you don't need response.</span>
+            <span class="text-info">Feel free to leave empty if you don't want me to response.</span>
             <span class="text-danger d-block" asp-validation-for="Email"></span>
-            <label class="text-color-red mt-2" asp-for="Message"></label>
+            <label class="text-light mt-2" asp-for="Message"></label>
             <div class="input">
                 <textarea asp-for="Message" class="" placeholder="Write your idea here..."></textarea>
             </div>
             <span class="text-danger d-block" asp-validation-for="Message"></span>
-            <button type="submit" class="btn btn-red mt-2 mb-3">Send!</button>
+            <button type="submit" class="btn btn-light mt-2 mb-3">Send!</button>
         </form>
-        <span class="text-info">I do not collect any data, e-mail address is used by me only in the case when a person expects answer to a question they have asked.</span>
+        <span class="text-info">I do not collect any data, e-mail address is used by me only to response to your request.</span>
     </div>
 </div>
 

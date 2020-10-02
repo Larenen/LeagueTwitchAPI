@@ -4,13 +4,13 @@
 
 <div class="container-fluid">
     <div class="text-center">
-        <h1 class="display-4">@ViewData["Title"]</h1>
+        <h1 class="display-4 text-light">@ViewData["Title"]</h1>
         <hr/>
         <div class="accordion mb-3" id="accordion">
             <div class="card border-0 color-bg">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-block btn-red text-color-dark collapsed " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <button class="btn btn-block btn-red collapsed " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             StreamLabs Chatbot
                         </button>
                     </h2>
@@ -23,7 +23,7 @@
                         <h4 class="h4">
                             Divisions & Win Ratio
                         </h4>
-                        <div class="jumbotron text-left color-dark-bg text-light">
+                        <div class="jumbotron text-left">
                             <p>Command: !divisions or !winratio (it's just example, feel free to use your own name :)</p>
                             <p>Response: $readapi(YOUR_LINK_HERE)</p>
                             <p class="text-info">Example: $readapi(http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/divisions/Larenen?server=eune&cultureName=en-US)</p>
@@ -33,7 +33,7 @@
                         <h4 class="h4">
                             Champion mastery
                         </h4>
-                        <div class="jumbotron text-left color-dark-bg text-light">
+                        <div class="jumbotron text-left">
                             <p>Command: !mastery (it's just example, feel free to use your own name :)</p>
                             <p>
                                 Response: $readapi(YOUR_LINK_HERE)
@@ -50,7 +50,7 @@
             <div class="card border-0 color-bg">
                 <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
-                        <button class="btn btn-block btn-red text-color-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="btn btn-block btn-red collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Nightbot
                         </button>
                     </h2>
@@ -63,7 +63,7 @@
                         <h4 class="h4">
                             Divisions & Win Ratio
                         </h4>
-                        <div class="jumbotron text-left color-dark-bg text-light">
+                        <div class="jumbotron text-left">
                             <p>Command: !divisions or !winratio (it's just example, feel free to use your own name :)</p>
                             <p>Message: $(urlfetch YOUR_LINK_HERE)</p>
                             <p class="text-info">Example: $(urlfetch http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/divisions/Larenen?server=eune&cultureName=en-US)</p>
@@ -73,7 +73,7 @@
                         <h4 class="h4">
                             Champion mastery
                         </h4>
-                        <div class="jumbotron text-left color-dark-bg text-light">
+                        <div class="jumbotron text-left">
                             <p>Command: !mastery (it's just example, feel free to use your own name :)</p>
                             <p>
                                 Message: $(urlfetch YOUR_LINK_HERE)
@@ -90,7 +90,7 @@
             <div class="card border-0 color-bg">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button class="btn btn-block btn-red text-color-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-block btn-red collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             StreamElements
                         </button>
                     </h2>
@@ -103,7 +103,7 @@
                         <h4 class="h4">
                             Divisions & Win Ratio
                         </h4>
-                        <div class="jumbotron text-left color-dark-bg text-light">
+                        <div class="jumbotron text-left">
                             <p>Command: !divisions or !winratio (it's just example, feel free to use your own name :)</p>
                             <p>Response: ${YOUR_LINK_HERE}</p>
                             <p class="text-info">Example: ${customapi.http://leaguetwitchapi.azurewebsites.net/api/PlayerStats/divisions/Larenen?server=eune&cultureName=en-US}</p>
@@ -113,7 +113,7 @@
                         <h4 class="h4">
                             Champion mastery
                         </h4>
-                        <div class="jumbotron text-left color-dark-bg text-light">
+                        <div class="jumbotron text-left">
                             <p>Command: !mastery (it's just example, feel free to use your own name :)</p>
                             <p>
                                 Response: ${YOUR_LINK_HERE}

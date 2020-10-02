@@ -13,29 +13,30 @@ using Flurl;
 
 namespace LeagueAPI.Controllers
 {
-    public class HomeController : Controller
+    public class WebPageController : Controller
     {
         private readonly IRiotApiService riotApiService;
         private readonly ISendgridService sendgridService;
 
-        public HomeController(IRiotApiService riotApiService, ISendgridService sendgridService)
+        public WebPageController(IRiotApiService riotApiService, ISendgridService sendgridService)
         {
             this.riotApiService = riotApiService ?? throw new ArgumentNullException(nameof(riotApiService));
             this.sendgridService = sendgridService ?? throw new ArgumentNullException(nameof(sendgridService));
         }
 
+        [HttpGet("/")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
+        [HttpGet("generate-link")]
         public IActionResult GenerateLink()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("generate-link")]
         public async Task<IActionResult> GenerateLink(GenerateLinkDto generateLinkViewModel)
         {
             if (!ModelState.IsValid)
@@ -71,22 +72,25 @@ namespace LeagueAPI.Controllers
             });
         }
 
+        [HttpGet("link")]
         public IActionResult Link(LinkViewModel linkViewModel)
         {
             return View(linkViewModel);
         }
 
+        [HttpGet("how-to-setup")]
         public IActionResult HowToSetup()
         {
             return View();
         }
 
+        [HttpGet("contact")]
         public IActionResult Contact()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("contact")]
         public async Task<IActionResult> Contact(ContactDto contactViewModel)
         {
             if (!ModelState.IsValid)
@@ -97,11 +101,13 @@ namespace LeagueAPI.Controllers
             return RedirectToAction("EmailSend");
         }
 
+        [HttpGet("email-send")]
         public IActionResult EmailSend()
         {
             return View();
         }
 
+        [HttpGet("error")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

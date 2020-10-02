@@ -9,19 +9,11 @@
   }
 
 .color-bg {
-    background-color: #ED6062;
+    background-color: #ffffff;
 }
 
 .color-dark-bg {
-    background: #252525;
-}
-
-.text-color-dark {
-    color: #252525;
-}
-
-.text-color-red {
-    color: #ED6062;
+    background: #ffffff;
 }
 
 .font-big {
@@ -66,7 +58,7 @@ html {
   
   body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   
   .footer {
@@ -75,7 +67,7 @@ html {
     width: 100%;
     /* white-space: nowrap; */
     /* Set the fixed height of the footer here */
-    min-height: 60px;
+    min-height: 40px;
   }
 
 
@@ -155,9 +147,9 @@ select {
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: #ED6062;
+    background: #ffffff;
     background-image: none;
-  }
+}
   /* Remove IE arrow */
   select::-ms-expand {
     display: none;
@@ -169,39 +161,39 @@ select {
     width: 100%;
     height: 59%;
     line-height: 3;
-    background: #ED6062;
+    background: #ffffff;
     overflow: hidden;
     border-radius: .25em;
   }
-  select {
+select {
     flex: 1;
     padding: 0 .5em;
-    color: #252525;
+    color: #000000;
     cursor: pointer;
-  }
+}
   /* Arrow */
-  .select::after {
+.select::after {
     content: '\25BC';
     position: absolute;
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #D03B3E;
+    background: #ffffff;
     cursor: pointer;
     pointer-events: none;
     -webkit-transition: .25s all ease;
     -o-transition: .25s all ease;
     transition: .25s all ease;
-  }
+}
   /* Transition */
   .select:hover::after {
-    color: #f39c12;
+    color: #606060;
   }
 /*************************************/
 
 /**Custom Text Input */
 
-input , textarea {
+input, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -209,9 +201,9 @@ input , textarea {
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: #ED6062;
+    background: #ffffff;
     background-image: none;
-  }
+}
 
 .input {
     position: relative;
@@ -219,17 +211,17 @@ input , textarea {
     width: 100%;
     height: 59%;
     line-height: 3;
-    background-color: #ED6062;
+    background-color: #ffffff;
     overflow: hidden;
     border-radius: .25em;
-  }
-  input , textarea {
+}
+input, textarea {
     flex: 1;
     padding: 0 .5em;
-    background-color: #ED6062;
+    background-color: #ffffff;
     color: #252525;
     cursor: pointer;
-  }
+}
   /*************************/
 
 .navbar-dark .navbar-nav .nav-link {
@@ -239,75 +231,6 @@ input , textarea {
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
     color: #252525;
 }
-
-/** Custom buttons */
-.btn-red {
-    background-color: #ED6062;
-    border-color: #ED6062;
-  }
-  
-  .btn-red:hover {
-    background-color: #E64345;
-    border-color: #E64345;
-  }
-  
-  .btn-red:focus, .btn-red.focus {
-    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
-  }
-  
-  .btn-red.disabled, .btn-red:disabled {
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-  
-  .btn-red:not(:disabled):not(.disabled):active, .btn-red:not(:disabled):not(.disabled).active,
-  .show > .btn-red.dropdown-toggle {
-    background-color: #bd2130;
-    border-color: #b21f2d;
-  }
-  
-  .btn-red:not(:disabled):not(.disabled):active:focus, .btn-red:not(:disabled):not(.disabled).active:focus,
-  .show > .btn-red.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
-  }
-
-
-  .btn-red-info {
-    background-color: #FD8B8E;
-    border-color: #FD8B8E;
-  }
-  
-  .btn-red-info:hover {
-    background-color: #ED6064;
-    border-color: #ED6064;
-  }
-  
-  .btn-red-info:focus, .btn-red-info.focus {
-    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
-  }
-  
-  .btn-red-info.disabled, .btn-red-info:disabled {
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-  
-  .btn-red-info:not(:disabled):not(.disabled):active, .btn-red-info:not(:disabled):not(.disabled).active,
-  .show > .btn-red-info.dropdown-toggle {
-    background-color: #bd2130;
-    border-color: #b21f2d;
-  }
-  
-  .btn-red-info:not(:disabled):not(.disabled):active:focus, .btn-red-info:not(:disabled):not(.disabled).active:focus,
-  .show > .btn-red-info.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
-  }
-
-  /*****************************/
-
-  .alert-info-red {
-      background-color: #FFD9DA;
-      border: 0;
-  }
 
  .link-dark {
      color: #252525;
