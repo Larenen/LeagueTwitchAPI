@@ -1,0 +1,18 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true
+  },
+  "profiles": {
+    "LeagueAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "SENDGRID_API_KEY": "SENDGRID_API_KEY",
+            "RIOT_APIKEY": "RIOT_APIKEY"
+        },
+      "applicationUrl": "http://localhost:39968"
+    }
+  }
+}

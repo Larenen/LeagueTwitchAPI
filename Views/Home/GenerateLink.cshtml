@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
-@model GenerateLinkViewModel
+@model GenerateLinkDto
 @{
     ViewData["Title"] = "Generate Link";
 }
@@ -65,23 +65,6 @@
                                 </p>
                             </div>
                         </div>
-
-                        <div id="collapseRegion" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                            <div class="card-header color-bg">
-                                <p class="font-weight-bold">
-                                    Language
-                                </p>
-                            </div>
-                            <div class="card-body color-bg rounded-bottom">
-                                <p>
-                                    Here you can choose in what language, statistics will be displayed.
-                                </p>
-                                <hr/>
-                                <p class="font-weight-light">
-                                    If your language is not listed here and u still wish to use my commands on your twitch chat, please contact me <a asp-action="Contact">here</a>.
-                                </p>
-                            </div>
-                        </div>
                         <div id="collapseNickname" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                             <div class="card-header color-bg">
                                 <p class="font-weight-bold">
@@ -124,20 +107,6 @@
                         </div>
                         <div class="col-2 col-md-1 info-fix pl-0">
                             <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseServer" aria-expanded="true" aria-controls="collapseServer">
-                                <i class="far fa-question-circle"></i>
-                            </a>
-                        </div>
-                        <div class="col-10 col-md-11">
-                            <label class="text-color-red" asp-for="Region">Language</label>
-                            <div class="select">
-                                <select class="" asp-for="Region">
-                                    <option value="en-US">English</option>
-                                    <option value="pl-PL">Polish</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-2 col-md-1 info-fix pl-0">
-                            <a tabindex="0" class="btn btn-red-info d-flex align-items-center" role="button" data-toggle="collapse" data-target="#collapseRegion" aria-expanded="true" aria-controls="collapseRegion">
                                 <i class="far fa-question-circle"></i>
                             </a>
                         </div>

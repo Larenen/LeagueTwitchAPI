@@ -7,17 +7,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LeagueAPI.Models;
 using Microsoft.Extensions.Configuration;
+using LeagueAPI.Services;
+using LeagueAPI.Exceptions;
+using Flurl;
 
 namespace LeagueAPI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IConfiguration _configuration;
+        private readonly IRiotApiService riotApiService;
+        private readonly ISendgridService sendgridService;
 
-        public HomeController(IConfiguration configuration)
+        public HomeController(IRiotApiService riotApiService, ISendgridService sendgridService)
         {
-            _configuration = configuration;
+            this.riotApiService = riotApiService ?? throw new ArgumentNullException(nameof(riotApiService));
+            this.sendgridService = sendgridService ?? throw new ArgumentNullException(nameof(sendgridService));
         }
+
         public IActionResult Index()
         {
             return View();
@@ -30,47 +36,34 @@ namespace LeagueAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GenerateLink(GenerateLinkViewModel generateLinkViewModel)
+        public async Task<IActionResult> GenerateLink(GenerateLinkDto generateLinkViewModel)
         {
-            var apiKey = System.Environment.GetEnvironmentVariable("RIOT_APIKEY");
-
             if (!ModelState.IsValid)
                 return View();
 
-            var playerId = await PlayerApiHelper.FetchPlayerId(generateLinkViewModel.Nickname, generateLinkViewModel.Server,apiKey);
-
-            if (playerId == null)
+            try
             {
-                if (generateLinkViewModel.Server == "na")
-                {
-                    playerId = await PlayerApiHelper.FetchPlayerId(generateLinkViewModel.Nickname, "na1",apiKey);
-                    if (playerId == null)
-                    {
-                        ModelState.AddModelError("PlayerNotFound","Player not found try again with different name, or change your server");
-                        return View();
-                    }
+                var playerId = await riotApiService.FetchPlayerId(generateLinkViewModel.Nickname, generateLinkViewModel.Server);
 
-                    generateLinkViewModel.Server = "na1";
-                }
-                else
-                {
-                    ModelState.AddModelError("PlayerNotFound","Player not found try again with different name, or change your server");
-                    return View();
-                }
+            }
+            catch (PlayerNotFoundException)
+            {
+                ModelState.AddModelError("PlayerNotFound", "Player not found try again with different name, or change your server.");
+                return View();
+            }
+            catch (RegionNotFoundException)
+            {
+                ModelState.AddModelError("RegionNotFound", "Selected region not found.");
+                return View();
             }
 
-            string link = null;
+            string link = $"{Request.Scheme}://{Request.Host}"
+                            .AppendPathSegment(generateLinkViewModel.Api)
+                            .AppendPathSegment(generateLinkViewModel.Nickname)
+                            .AppendPathSegment(generateLinkViewModel.Server);
 
             if (generateLinkViewModel.Api == "mastery")
-                link = string.Format(
-                    "{0}://{1}/api/PlayerStats/Mastery/{2}/<replace with bot argument>?server={3}&cultureName={4}",
-                    Request.Scheme, Request.Host, generateLinkViewModel.Nickname, generateLinkViewModel.Server,
-                    generateLinkViewModel.Region);
-            else
-                link = string.Format(
-                    "{0}://{1}/api/PlayerStats/{2}/{3}?server={4}&cultureName={5}", Request.Scheme, Request.Host,
-                    generateLinkViewModel.Api, generateLinkViewModel.Nickname, generateLinkViewModel.Server,
-                    generateLinkViewModel.Region);
+                link = link.AppendPathSegment("<replace with bot argument>");
 
             return RedirectToAction("Link",new LinkViewModel
             {
@@ -94,24 +87,12 @@ namespace LeagueAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Contact(ContactViewModel contactViewModel)
+        public async Task<IActionResult> Contact(ContactDto contactViewModel)
         {
-            var mailbody = $@"Hallo website owner,
-
-                            This is a new contact request from your website:
-
-                            Name: {contactViewModel.Name}
-                            Email: {contactViewModel.Email}
-                            Message: ""{contactViewModel.Message}""
-
-
-                            Cheers,
-                            The website contact form";
-
             if (!ModelState.IsValid)
                 return View(contactViewModel);
 
-            await EmailHelper.SendMail(contactViewModel,mailbody);
+            await sendgridService.SendMail(contactViewModel);
 
             return RedirectToAction("EmailSend");
         }

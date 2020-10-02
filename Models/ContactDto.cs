@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeagueAPI.Models
 {
-    public class ContactViewModel
+    public class ContactDto
     {
         [Required]
         [MinLength(5,ErrorMessage = "Name must be at least 5 letter long")]
