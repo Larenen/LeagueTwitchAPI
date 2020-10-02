@@ -1,29 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Resources;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using LeagueAPI.Exceptions;
-using LeagueAPI.Models;
-using LeagueAPI.Models.ChampionsDTO;
 using LeagueAPI.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Localization.Internal;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace LeagueAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class PlayerStatsController : ControllerBase
     {

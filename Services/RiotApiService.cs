@@ -52,8 +52,8 @@ namespace LeagueAPI.Services
                           .ReceiveJson<LeagueEntryDTO[]>();
 
             string divisions = "";
-            if (divisions.Count() < 1)
-                divisions += "Player got no division on any queue";
+            if (result.Count() < 1)
+                return "Player got no division on any queue";
 
             foreach (var leagueEntry in result)
             {
