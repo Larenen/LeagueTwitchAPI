@@ -11,6 +11,7 @@ namespace LeagueAPI.Models
         [Required]
         [MinLength(5,ErrorMessage = "Name must be at least 5 letter long")]
         public string Name { get; set; }
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
         [Required]
