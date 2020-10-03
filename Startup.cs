@@ -30,12 +30,6 @@ namespace LeagueAPI
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
             services.AddScoped<IRiotApiService, RiotApiService>();
             services.AddScoped<ISendgridService, SendgridService>();
 
