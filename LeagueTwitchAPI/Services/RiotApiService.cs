@@ -26,9 +26,9 @@ namespace LeagueAPI.Services
             this.memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
         }
 
-        public async Task<string> FetchPlayerId(string playerName, string server)
+        public async Task<string> FetchPlayerId(string playerName, string region)
         {
-            var address = RegionalEndpoint.ServerNameToUrl(server);
+            var address = RegionalEndpoint.ServerNameToUrl(region);
 
             var result = await address.AppendPathSegments("lol", "summoner", "v4", "summoners", "by-name", playerName)
                                       .AllowHttpStatus(HttpStatusCode.NotFound)

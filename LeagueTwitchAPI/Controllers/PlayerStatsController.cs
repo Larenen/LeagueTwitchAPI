@@ -26,7 +26,7 @@ namespace LeagueAPI.Controllers
             }
             catch (PlayerNotFoundException)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, "Player not found.");
+                return StatusCode(StatusCodes.Status400BadRequest, "Player not found");
             }
             catch (RegionNotFoundException)
             {
@@ -34,7 +34,7 @@ namespace LeagueAPI.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Server error.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Server error");
             }
         }
 
@@ -47,7 +47,7 @@ namespace LeagueAPI.Controllers
             }
             catch (PlayerNotFoundException)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, "Player not found.");
+                return StatusCode(StatusCodes.Status400BadRequest, "Player not found");
             }
             catch (RegionNotFoundException)
             {
@@ -59,7 +59,7 @@ namespace LeagueAPI.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Server error.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Server error");
             }
         }
 
@@ -72,7 +72,7 @@ namespace LeagueAPI.Controllers
             }
             catch (PlayerNotFoundException)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, "Player not found.");
+                return StatusCode(StatusCodes.Status400BadRequest, "Player not found");
             }
             catch (RegionNotFoundException)
             {
@@ -80,7 +80,7 @@ namespace LeagueAPI.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Server error.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Server error");
             }
         }
     }
