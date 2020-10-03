@@ -2,6 +2,6 @@
 
 # LeagueTwitchAPI
 
-> Site that provides a commands to Twitch bots, allowing your viewers to see up to date info about your summoner (like win rate, current division or mastery) in real time!
+> Site that provides commands to Twitch bots, allowing your viewers to see up to date information about your League of Legends summoner (like win rate, current division or mastery) in real time!
 
 ![Recordit GIF](http://g.recordit.co/9WGibuMPiY.gif)
